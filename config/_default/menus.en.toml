@@ -66,11 +66,6 @@ name = "About"
 url = "about"
 weight = 2
 
-[[main]]
-name = "Contact"
-url = "contact"
-weight = 3
-
 # Dropdown menu
 [[main]]
 weight = 4
@@ -80,7 +75,7 @@ hasChildren = true
   [[main]]
   parent = "Pages"
   name = "Author"
-  url = "author/john-doe"
+  url = "author/franck"
   weight = 1
 
   [[main]]
@@ -113,29 +108,8 @@ hasChildren = true
   url = "elements/"
   weight = 6
 
-[[main]]
-name = "Shop"
-url = "shop"
-weight = 5
-
-
 # footer menu
 [[footer]]
 name = "About"
 url = "about"
 weight = 1
-
-[[footer]]
-name = "Contact"
-url = "contact"
-weight = 2
-
-[[footer]]
-name = "Privacy Policy"
-url = "privacy-policy"
-weight = 3
-
-[[footer]]
-name = "Terms Conditions"
-url = "terms-conditions"
-weight = 4
