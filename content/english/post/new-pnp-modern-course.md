@@ -33,6 +33,10 @@ With these you get near of <ins>3 hours</ins> of content reviewing Web Parts con
 
 {{< image src="images/post/new-pnp-modern-course/course_player.png" caption="Course player experience" alt="alter-text" position="center" class="img-fluid" title="image title" webp="true" >}}
 
+<div style="text-align:center">
+    <a href="https://courses.franckcornu.com/courses/pnp-modern-search" target="_blank" class="btn btn-primary" style="color:#fff">Get Started!</a>
+</div>
+
 > **Launch offer** Get a 20% off until Feb 28 2022 with the code **PNPSEARCH2022** 
 
 ## Regularly updated content
