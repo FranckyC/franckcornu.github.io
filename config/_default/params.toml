@@ -21,7 +21,7 @@ mainSections = ["post"]
 # featured post
 featured_post = true
 # layout
-post_layout = "grid" # layout value (full, grid or list)
+post_layout = "list" # layout value (full, grid or list)
 # Sidebar
 sidebar = "right" # sidebar value (left, right or false)
 # custom script on header
@@ -49,7 +49,7 @@ currency = "$"
 # promotion
 [promotion]
 title = "Official PnP Modern Search learning course"
-content = "Become a master of the PnP Modern Search solution with more than 3 hours of practical demos and use cases"
+content = "Become a master of the PnP Modern Search solution with more than 3 hours of practical demos and use cases <br><br> **Launch offer (ends Feb 28)** <br> Get <ins>20%</ins> off with the code <br> **PNPSEARCH2022**"
 image = "images/promotion.jpg"
 button_label = "Get Started"
 button_link = "https://courses.franckcornu.com/courses/pnp-modern-search"

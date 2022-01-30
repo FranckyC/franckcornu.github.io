@@ -47,7 +47,7 @@
 						{{ range .}}
 						{{ if (fileExists (add `assets/` .)) }}
 						{{ $image:= resources.Get . }}
-        		{{ $imageFallback:= $image.Resize "380x" }}
+        				{{ $imageFallback:= $image.Resize "380x" }}
 						{{ $imageLG:= $image.Resize "380x webp" }}
 						{{ $imageMD:= $image.Resize "360x webp" }}
 						{{ $imageSM:= $image.Resize "540x webp" }}

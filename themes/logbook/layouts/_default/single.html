@@ -22,32 +22,34 @@
           </li>
         </ul>
       </div>
-      {{with .Params.images}}
-        <div class="col-12 mb-3">
-          <div class="post-slider">
-            {{ range .}}
-            {{ if (fileExists (add `assets/` .)) }}
-            {{ $image:= resources.Get . }}
-            {{ $imageFallback:= $image.Resize "750x" }}
-            {{ $imageLG:= $image.Resize "750x webp" }}
-            {{ $imageMD:= $image.Resize "710x webp" }}
-            {{ $imageSM:= $image.Resize "540x webp" }}
-            {{ $imageXS:= $image.Resize "400x webp" }}
-            <picture>
-              <source srcset="{{ $imageXS.RelPermalink }}" media="(max-width: 575px)">
-              <source srcset="{{ $imageSM.RelPermalink }}" media="(max-width: 767px)">
-              <source srcset="{{ $imageMD.RelPermalink }}" media="(max-width: 991px)">
-              <source srcset="{{ $imageLG.RelPermalink }}" media="(max-width: 1200px)">
-              <source srcset="{{$imageLG.RelPermalink}}">
-              <img loading="lazy" class="img-fluid w-100" src="{{$imageLG.RelPermalink}}" alt="post-thumb">
-            </picture>
-            {{ else }}
-            <img loading="lazy" class="img-fluid" src="{{ $imageFallback.RelPermalink }}" alt="post-thumb">
-            {{ end }}
-            {{ end }}
+      {{if or ( and (isset .Params "showimage") (.Params.showimage) ) (not  (isset .Params "showimage")) }}
+        {{with .Params.images}}
+          <div class="col-12 mb-3">
+            <div class="post-slider">
+              {{ range .}}
+              {{ if (fileExists (add `assets/` .)) }}
+              {{ $image:= resources.Get . }}
+              {{ $imageFallback:= $image.Resize "750x" }}
+              {{ $imageLG:= $image.Resize "750x webp" }}
+              {{ $imageMD:= $image.Resize "710x webp" }}
+              {{ $imageSM:= $image.Resize "540x webp" }}
+              {{ $imageXS:= $image.Resize "400x webp" }}
+              <picture>
+                <source srcset="{{ $imageXS.RelPermalink }}" media="(max-width: 575px)">
+                <source srcset="{{ $imageSM.RelPermalink }}" media="(max-width: 767px)">
+                <source srcset="{{ $imageMD.RelPermalink }}" media="(max-width: 991px)">
+                <source srcset="{{ $imageLG.RelPermalink }}" media="(max-width: 1200px)">
+                <source srcset="{{$imageLG.RelPermalink}}">
+                <img loading="lazy" class="img-fluid w-100" src="{{$imageLG.RelPermalink}}" alt="post-thumb">
+              </picture>
+              {{ else }}
+              <img loading="lazy" class="img-fluid" src="{{ $imageFallback.RelPermalink }}" alt="post-thumb">
+              {{ end }}
+              {{ end }}
+            </div>
           </div>
-        </div>
         {{end}}
+      {{ end }}
       <div class="col-lg-10 mx-auto">
         <div class="content">{{.Content}}</div>
       </div>

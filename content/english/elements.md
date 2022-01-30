@@ -135,9 +135,5 @@ alert(s);
 {{< image src="images/post/post-2.jpg" caption="" alt="alter-text" height="400" width="400" position="right" command="fill" option="q100" class="img-fluid" title="image title"  webp="false" >}}
 <hr>
 
-# Gallery
-{{< gallery dir="images/gallery" class="" height="400" width="400" webp="true" command="Fit" options="" zoomable="true" >}}
-<hr>
-
 # Youtube :
 {{< youtube C0DPdy98e4c >}}
