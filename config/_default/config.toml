@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://demo.gethugothemes.com/logbook/"
+baseURL = "https://www.franckcornu.com/"
 title = "Franck Cornu"
 theme = "logbook"
 # post pagination
