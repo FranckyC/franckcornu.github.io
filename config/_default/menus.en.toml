@@ -11,9 +11,14 @@ url = "categories/modern-search"
 weight = 2
 
 [[main]]
+name = "Courses"
+url = "https://courses.franckcornu.com/courses"
+weight = 3
+
+[[main]]
 name = "About"
 url = "about"
-weight = 3
+weight = 4
 
 # footer menu
 [[footer]]

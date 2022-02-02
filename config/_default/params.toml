@@ -57,8 +57,8 @@ button_link = "https://courses.franckcornu.com/courses/pnp-modern-search"
 # seo meta data for OpenGraph / Twitter Card
 [metadata]
 keywords = ["Franck Cornu", "PnP", "Modern Search"]
-description = "This is meta description"
-author = "Themefisher"
+description = "Franck Cornu's blog about Microsoft 365, Azure and PnP Modern Search"
+author = "Franck Cornu"
 image = "images/favicon.png" # this image will be used as fallback if a page has no image of its own
 
 # matomo tracking: see https://matomo.org/
