@@ -52,9 +52,18 @@ a:hover {
 .slick-slide {
   outline: 0;
 }
-
+/*
 .section {
   padding-top: 6.25rem;
+  padding-bottom: 6.25rem;
+  &-sm{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}*/
+
+.section {
+  padding-top: 2rem;
   padding-bottom: 6.25rem;
   &-sm{
     padding-top: 5rem;

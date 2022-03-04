@@ -3,11 +3,11 @@
 {{ $hasbar:= or (eq $sidebar `left`) (eq $sidebar `right`)}}
 {{ $layout:= .Params.post_layout }}
 {{ $widget:= site.Params.widgets.sidebar }}
-
+ <!--
 {{ if site.Params.featured_post }}
 {{ partialCached "featured-post.html" . }}
 {{ end }}
-
+ -->
 <section class="section">
   <div class="container">
     <div class="row">
