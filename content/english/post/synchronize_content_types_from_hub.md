@@ -1,5 +1,5 @@
 ---
-title: "Synchronize content types to a site from hub programmatically"
+title: "Programmatically synchronize content types to a site from content type hub"
 date: 2022-03-30T18:24:30.129Z
 # post thumb
 images:
