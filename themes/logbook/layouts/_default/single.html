@@ -4,7 +4,21 @@
 {{ if or (eq .Section "post") (eq .Section "posts") (eq .Section "blog") (eq .Section "blogs") (eq .Section "news") (eq .Section "categories") (eq .Section "tags") }}
 
 <section class="section">
+
   <div class="container">
+
+    {{ with site.Params.promotion}}
+    <div class="banner">
+
+        <div>
+          <p class="text-white banner-title">{{.title | markdownify}}</p>
+          <p class="text-white">{{.content | markdownify}}</p>
+        </div>
+        
+        <a href="{{.button_link | safeURL }}" class="btn btn-primary" target="_blank">{{ .button_label }}</a>
+    </div>
+    {{ end }}
+
     <article class="row mb-4">
       <div class="col-lg-10 mx-auto mb-4">
         <h1 class="h2 mb-3">{{ .Title }}</h1>

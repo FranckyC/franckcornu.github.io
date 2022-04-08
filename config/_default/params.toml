@@ -51,7 +51,7 @@ currency = "$"
 title = "Official PnP Modern Search learning course"
 content = "Become a master of the PnP Modern Search solution with more than 3 hours of practical demos and use cases"
 image = "images/promotion.jpg"
-button_label = "Get Started"
+button_label = "See the offer"
 button_link = "https://courses.franckcornu.com/courses/pnp-modern-search"
 
 # seo meta data for OpenGraph / Twitter Card

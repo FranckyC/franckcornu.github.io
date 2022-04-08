@@ -460,6 +460,28 @@
   }
 }
 
+.banner{
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  background-color: rgba(24,24,24,.7);
+  width: 100%;
+
+  .banner-title {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
 .footer-list {
   a {
     display: block;
