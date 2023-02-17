@@ -12,7 +12,7 @@ weight = 2
 
 [[main]]
 name = "Courses"
-url = "https://courses.franckcornu.com/courses"
+url = "https://franckcornu.thinkific.com/courses"
 weight = 3
 
 [[main]]
