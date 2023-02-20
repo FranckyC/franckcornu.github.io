@@ -10,8 +10,6 @@ draft: false
 social:
   - icon: "fab fa-github"
     link: "https://github.com/FranckyC"
-  - icon: "fab fa-twitter"
-    link: "https://twitter.com/FranckCornu"
   - icon: "fab fa-linkedin-in"
     link: "https://www.linkedin.com/in/franckcornu/"
 ---

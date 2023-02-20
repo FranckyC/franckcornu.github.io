@@ -52,7 +52,7 @@ title = "Official PnP Modern Search learning course"
 content = "Become a master of the PnP Modern Search solution with more than 3 hours of practical demos and use cases"
 image = "images/promotion.jpg"
 button_label = "See the offer"
-button_link = "https://courses.franckcornu.com/courses/pnp-modern-search"
+button_link = "https://franckcornu.thinkific.com/courses/pnp-modern-search"
 
 # seo meta data for OpenGraph / Twitter Card
 [metadata]
@@ -104,10 +104,10 @@ sidebar = ["about-me", "promotion", "search", "subscription", "categories", "rec
 
 
 ############################# social site ########################
-[[social]]
-name = "twitter"
-icon = "fab fa-twitter" # fontawesome icons: https://fontawesome.com/icons/
-link = "https://twitter.com/FranckCornu"
+#[[social]]
+#name = "twitter"
+#icon = "fab fa-twitter" # fontawesome icons: https://fontawesome.com/icons/
+#link = "https://twitter.com/FranckCornu"
 
 [[social]]
 name = "linkedin"
