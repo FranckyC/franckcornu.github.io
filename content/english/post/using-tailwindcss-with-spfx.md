@@ -53,9 +53,9 @@ Behind the scenes, SPFx generates unique names for CSS classes to avoid name con
 
 For simple solutions wih few components and stylesheets, this mechanism is easy to use and works well. However, for more complex solutions including many components and sub components, this approach has some limits.
 
-As an SPFx developer, writing CSS is not my primary skill and not really a passion (and I'm probably not the only one there). Often I get overwhelmed by SCSS stylesheets sprawling in my project structure as long as my solution is evolving. I often need to reorganize, delete or update parts of SCSS stylesheets. I also don't talk about hours I've spent fixing dummy CSS issues...
+As an developer, writing CSS is not my primary skill and not really a passion (and I'm probably not the only one there). Often I get overwhelmed by SCSS stylesheets sprawling in my project structure as long as my solution is evolving. I often need to reorganize, delete or update parts of SCSS stylesheets. I also don't talk about hours I've spent fixing dummy CSS issues...
 
-When writing CSS, you always have to think about containers hierachy, styles reusability, shared variables, etc. According to your components structure and complexity (ex: if your components needs to support theme), this is a time consuming and a cumbersome process as there is no easy way to keep in sync CSS classes usages and declarations in the code. Often, some CSS code parts aren't actually used in my solution due to these multiple changes increasing bundle size and I always feel my styles could have been organized better.
+When writing CSS, you always have to think about naming conventions, containers hierachy, styles reusability, shared variables, etc. According to your components structure and complexity (ex: if your components needs to support theme), this is a time consuming and a cumbersome process as there is no easy way to keep in sync CSS classes usages and declarations in the code. Often, some CSS code parts aren't actually used in my solution due to these multiple changes increasing bundle size and I always feel my styles could have been organized better.
 
 > As an example, I'm pretty sure many CSS classes declared in the PnP Modern Search are not actually used in the code! Anyway..
 
