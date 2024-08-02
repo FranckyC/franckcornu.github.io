@@ -238,7 +238,7 @@ return (
 
 ### Deal with the dark mode
 
-In components, you often need to handle both light and dark modes according to the host theme selected (ex: on a SharePoint site). It means CSS classes used has to be aware of what colors from the theme should be applied. Despite TailwindCSS has its own way to handle [dark mode](https://tailwindcss.com/docs/dark-mode), we can't really rely on it with the SharePoint Framework (we could but this is not optimal in my opinion). By default, there is no "link" between TailwindCSS classes and SPFx theme values. **We have to create one**.
+In components, you often need to handle both light and dark modes according to the host theme selected (ex: on a SharePoint site). It means CSS classes used have to be aware of colors from the theme that should be applied. Despite TailwindCSS has its own way to handle [dark mode](https://tailwindcss.com/docs/dark-mode), we can't really rely on it with the SharePoint Framework (we could but this is not optimal in my opinion). By default, there is no "link" between TailwindCSS classes and SPFx theme values. **We have to create one**.
 
 The beauty of TailwindCSS is it is very customizable. To create that 'link' we simply extend the default theme definition in the TailwindCSS `tailwind.config.js` configuration file and use custom CSS variables for common colors (ex: body text, primary color, etc.):
 
