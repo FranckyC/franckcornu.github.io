@@ -12,9 +12,11 @@ description: "Illustrates the limitation of Copilot to work with custom SharePoi
 categories: ["copilot","sharepoint"]
 tags: [post]
 type: "featured" # available type (regular or featured)
-draft: true
+draft: false
 sidebar: right
 showimage: false
+_build:
+  list: false
 ---
 
 In this blog post, I wanted to share with you a use case I came across regarding my recent experience with Copilot Studio.
