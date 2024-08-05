@@ -108,7 +108,7 @@ Assuming this, then how Microsoft could possibly know what metadata from your cu
 
 #### Tricking the Copilot semantic index
 
-Because we had no control over the semantic index and how embeddings are done, I tried multiple solutions to "trick" the semantic index and make the metadata information available to generate the answers. I tested few strategies:
+Because I had no control over the semantic index and how embeddings are done, I tried multiple solutions to "trick" the semantic index and make the metadata information available to generate the answers. I tested few strategies:
 
 1. **Metadata as text (original page)**
 
@@ -132,7 +132,7 @@ This time, asking the place or origin, the Copilot gave me the right answer!
 
 {{< image src="images/post/copilot-studio-metadata/ironman_metadata2_questions.png" caption="" alt="alter-text" position="center" class="img-fluid" title="Copilot question - Test 2"  webp="false" >}}
 
-It seems creating a new page using **the same title** but only including the metadata **as text** gives the correct output. With this (ugly) technique, we force, in a way, the semantic index to generate a separate embedding with this data and create a similarity with the original page through the "title" property (which must have a high importance in the process). This way this page comes high in the results and can be used for answers. Despite this approach seems to work, that is definitely not a long term satisfying option...
+It seems creating a new page using **the same title** but only including the metadata **as text** gives the correct output. With this (ugly) technique, I force, in a way, the semantic index to generate a separate embedding with this data and create a similarity with the original page through the "title" property (which must have a high importance in the process). This way this page comes high in the results and can be used for answers. Despite this approach seems to work, that is definitely not a long term satisfying option...
 
 Here is a summary of strategies I tested and the Copilot outcomes:
 
@@ -156,14 +156,14 @@ Even with a custom Copilot scenario with Teams Toolkit and Teams AI library, the
 
 **Why not using Azure Search instead...?**
 
-Indexing SharePoint content into a other system like Azure Search with more flexibility could theorically work better but, **what would be the point to re-index content into an other system, at additional costs, while this data is already indexed into a service, Microsoft 365, we already pay for? An absolute nonsense**. Anyway [Azure Search SharePoint connector does not support .aspx pages](https://learn.microsoft.com/en-us/azure/search/search-howto-index-sharepoint-online#limitations-and-considerations) and do not even mention the complexity of managing content permissions.
+Indexing SharePoint content into a other system like Azure Search with more flexibility could theorically work better but, **what would be the point to re-index content into an other system, at additional costs, while this data is already indexed into a service, Microsoft 365, I already pay for? An absolute nonsense**. Anyway [Azure Search SharePoint connector does not support .aspx pages](https://learn.microsoft.com/en-us/azure/search/search-howto-index-sharepoint-online#limitations-and-considerations) and do not even mention the complexity of managing content permissions.
 
 **Ok but what about a custom Copilot plugin then..?**
 
 Plugins are good to fetch live data based on a prompt and use returned data in the generated answer. Technically speaking, to get a specific metadata value to be considered in the answer, that could be a solution. However, it just requires few steps...:
 
 1. Interpret the user query and detect every possible metadata he could ask for to trigger the plugin.
-2. Identify uniquely the content that we need to get the metadata from based on that query, like the corresponding SharePoint pages. These information should theorically come from the semantic index in the first place.
+2. Identify uniquely the content that I need to get the metadata from based on that query, like the corresponding SharePoint pages. These information should theorically come from the semantic index in the first place.
 3. In the plugin, call the Microsoft Graph API for all these pages based on the URL and get the metadata values.
 
 What a complex implementation with an high chance of failure for something that could have been simply resolved by retrieving metadata value along the content in the first place...  
