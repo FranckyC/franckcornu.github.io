@@ -17,7 +17,7 @@ sidebar: right
 index: false
 showimage: false
 _build:
-  list: false
+  list: true
 ---
 
 In this blog post, I wanted to share with you a use case I came across regarding my recent experience with Copilot Studio.
