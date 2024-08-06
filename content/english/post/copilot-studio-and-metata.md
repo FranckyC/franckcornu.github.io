@@ -14,7 +14,7 @@ tags: [post]
 type: "featured" # available type (regular or featured)
 draft: false
 sidebar: right
-index: false
+index: true
 showimage: false
 _build:
   list: true
