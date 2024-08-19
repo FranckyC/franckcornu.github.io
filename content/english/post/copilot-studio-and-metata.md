@@ -1,5 +1,5 @@
 ---
-title: "Hey Copilot, what about are my metadata?"
+title: "Hey Copilot, what about my metadata?"
 date: 2024-08-01T00:00:00.000Z
 # post thumb
 images:
