@@ -24,6 +24,8 @@ In this blog post, I wanted to share with you a use case I came across regarding
 
 > **DISCLAIMER** </br></br> I'm not an "AI expert" by any means, just a developer who consumes AI services which is not quite the same :D.
 
+> **IMPORTANT UPDATE (23/08/2024)** </br></br> I had the confirmation from Microsoft that custom Copilots built through Copilot Studio do not leverage the user or tenants semantic index. It uses a combination of regular lexical search and internal summarization steps passed to LLM to produce answers. Therefore, it explains the behavior I've seen in my example. This is not clearly documented though. The best hint can be found [here](https://learn.microsoft.com/en-us/microsoft-copilot-studio/generative-answers-sharepoint-no-response#search-results-are-missing).
+
 ## Context
 
 I recently started a proof of concept to evaluate Copilot capabilities using Copilot Studio. The business goal was basically to help people working on an specific domain to navigate through SharePoint documentation content using a dedicated assistant answering questions about it.
@@ -61,9 +63,8 @@ Let's take a fictional example of a "Marvel" copilot, answering questions about 
 
 > Note that I've been able to reproduce the same exact behavior with different type of content so it means you could reproduce it on your own tenant as well.
 
-The experience of building a copilot with Copilot Studio is quite straightforward. I was able to select the SharePoint sites containing all the information to retrieve. I started with a very basic behavior with only one topic configured using the generative answer action and setting multiple SharePoint sites as knowledge sources (without using Copilot general knowledge). For the initial prompt, I started with this simple prompt (the Copilot must be configured to use Gen AI for conversations):
+The experience of building a copilot with Copilot Studio is quite straightforward. I was able to select the SharePoint sites containing all the information to retrieve. I started with a very basic behavior with only one topic configured using the generative answer action and setting multiple SharePoint sites as knowledge sources (without using Copilot general knowledge). For the initial prompt, I started with this simple prompt:
 
-{{< image src="images/post/copilot-studio-metadata/copilot_parameters.png" caption="" alt="alter-text" position="center" class="img-fluid" title="Copilot settings"  webp="false" >}}
 
 ```
 You are a personal assistant for company employees. 
@@ -106,9 +107,11 @@ Assuming this, then how Microsoft could possibly know what metadata from your cu
 
 **--SUPPOSITION MODE OFF--**
 
-#### Tricking the Copilot semantic index
+> **Important update 23/08/2024**: I had the confirmation from Microsoft that custom Copilots built through Copilot Studio do not leverage the user or tenants semantic index. However, the supposition made above is still valid for Copilot for Microsoft 365 scenarios as it uses semantic index in this case.
 
-Because I had no control over the semantic index and how embeddings are done, I tried multiple solutions to "trick" the semantic index and make the metadata information available to generate the answers. I tested few strategies:
+#### Tricking the Copilot index
+
+Because I had no control over the index, I tried multiple solutions to "trick" the index and make the metadata information available to generate the answers. I tested few strategies:
 
 1. **Metadata as text (original page)**
 
@@ -132,7 +135,7 @@ This time, asking the place or origin, the Copilot gave me the right answer!
 
 {{< image src="images/post/copilot-studio-metadata/ironman_metadata2_questions.png" caption="" alt="alter-text" position="center" class="img-fluid" title="Copilot question - Test 2"  webp="false" >}}
 
-It seems creating a new page using **the same title** but only including the metadata **as text** gives the correct output. With this (ugly) technique, I force, in a way, the semantic index to generate a separate embedding with this data and create a similarity with the original page through the "title" property (which must have a high importance in the process). This way this page comes high in the results and can be used for answers. Despite this approach seems to work, that is definitely not a long term satisfying option...
+It seems creating a new page using **the same title** but only including the metadata **as text** gives the correct output. This way this page comes high in the results (because of the title) and can be used for answers. Despite this approach seems to work, that is definitely not a long term satisfying option...
 
 Here is a summary of strategies I tested and the Copilot outcomes:
 
@@ -150,7 +153,7 @@ For years, Microsoft told us to use metadata to classify the information to impr
 
 In my case, that was a big disapointement because, with Microsoft Search (Graph Connector in the context of Copilot if you prefer) many other sources (not only SharePoint) can contain custom schemas with a lot of valuable information that could be used to generate answers. As it is now, I can't use Copilot Studio for this type of requirements as the outcomes are not reliable.
 
-**What about a custom Copilot...?**
+**What about a custom Copilot with Teams Toolkit...?**
 
 Even with a custom Copilot scenario with Teams Toolkit and Teams AI library, there is no way to do RAG with the Microsoft Search semantic index programmaticaly as there is no (official) API.
 
