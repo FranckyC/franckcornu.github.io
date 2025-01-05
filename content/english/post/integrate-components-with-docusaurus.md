@@ -21,7 +21,7 @@ _build:
 --- 
 In this blog post, I show you how to integrate the [PnP Modern Search Core components](https://github.com/microsoft-search/pnp-modern-search-core-components) into your enterprise Docusaurus documentation sites to add search capability. 
 
-> The GitHub solution associated to this post is available here: [https://github.com/microsoft-search/pnp-modern-search-core-components/tree/release/1.1.0/samples/docusaurus](https://github.com/microsoft-search/pnp-modern-search-core-components/tree/release/1.1.0/samples/docusaurus) 
+> The GitHub solution associated to this post is available here: [https://github.com/microsoft-search/pnp-modern-search-core-components/tree/main/samples/docusaurus](https://github.com/microsoft-search/pnp-modern-search-core-components/tree/main/samples/docusaurus) 
 
 ## What is Docusaurus?
 
@@ -47,7 +47,7 @@ In the next sections, I'll detail how to use Microsoft Search to index an intern
 
 Having search capabilities often means having relevant filters for your content. Regarding websites, this can be achieved by leveraging HTML meta-tags.
 
-In Docusaurus, meta-tags can be set directly in the [docusaurus.config.ts](https://github.com/microsoft-search/pnp-modern-search-core-components/blob/release/1.1.0/samples/docusaurus/docusaurus.config.ts) file:
+In Docusaurus, meta-tags can be set directly in the [docusaurus.config.ts](https://github.com/microsoft-search/pnp-modern-search-core-components/blob/main/samples/docusaurus/docusaurus.config.ts) file:
 
 ```javascript
 themeConfig: {
@@ -76,7 +76,7 @@ These meta tags will be then mapped to your search schema in Microsoft Search wh
 ### Deploy your site
 
 In my context, I use an Azure App Service (Windows, NodeJS 20+) to host the documentation. Docusaurus being a static site generator, it technically doesn't require a web server and can be deloyed to an [Azure Static Web App](https://learn.microsoft.com/en-us/azure/static-web-apps/overview) or an [Azure Blob container with the static webiste feature enabled](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website) (in this case, you can't add authentication on top like an App Service or a Static Web Site provide with EasyAuth).
-When deploying a Docusaurus site to an App Service, you'll need to write a dummy [server](https://github.com/microsoft-search/pnp-modern-search-core-components/blob/release/1.1.0/samples/docusaurus/src/server/server.ts) and configure a [web.config](https://github.com/microsoft-search/pnp-modern-search-core-components/blob/release/1.1.0/samples/docusaurus/src/server/web.config) rewrite rule to serve static assets from Docusaurus build folder. In my case I use a basic Node.js Express server: 
+When deploying a Docusaurus site to an App Service, you'll need to write a dummy [server](https://github.com/microsoft-search/pnp-modern-search-core-components/blob/main/samples/docusaurus/src/server/server.ts) and configure a [web.config](https://github.com/microsoft-search/pnp-modern-search-core-components/blob/main/samples/docusaurus/src/server/web.config) rewrite rule to serve static assets from Docusaurus build folder. In my case I use a basic Node.js Express server: 
 
 ```javascript
 import express from "express";
@@ -92,7 +92,7 @@ app.listen(port, () => {
 });
 ```
 
-Also, for convenience, and to avoid uploading the whole `node_modules`, I'm using [Webpack](https://github.com/microsoft-search/pnp-modern-search-core-components/blob/release/1.1.0/samples/docusaurus/src/server/webpack.server.js) to get a standalone bundle file to be uploaded:
+Also, for convenience, and to avoid uploading the whole `node_modules`, I'm using [Webpack](https://github.com/microsoft-search/pnp-modern-search-core-components/blob/main/samples/docusaurus/src/server/webpack.server.js) to get a standalone bundle file to be uploaded:
 
 ```xml
 ...
@@ -160,7 +160,7 @@ In the package.json, first add the  `@pnp/modern-search-core` [dependency](https
 
 Because Docusaurus uses React SSR (Server Side Rendering), you can't import components directly using regular `import { <...> } from '@pnp/modern-search-core'` statements on top of your files as this will fail the build process. PnP Modern Search components are web components meant to be executed in the browser and can't be packaged for server side rendering (for instance the 'window' object is not accesssible from there). As a workaround, dependencies are loaded asynchronously, when the actual page is rendered in the browser (see [https://docusaurus.io/docs/advanced/ssg](https://docusaurus.io/docs/advanced/ssg) for more info about SSR workarounds):
 
-We use the [swizlling](https://docusaurus.io/docs/swizzling) technique to override the root component [theme/Root.tsx](https://github.com/microsoft-search/pnp-modern-search-core-components/blob/release/1.1.0/samples/docusaurus/src/theme/Root.tsx) (rendered once in this application), to load the components asynchronously. This way, components can be used on all pages:
+We use the [swizlling](https://docusaurus.io/docs/swizzling) technique to override the root component [theme/Root.tsx](https://github.com/microsoft-search/pnp-modern-search-core-components/blob/main/samples/docusaurus/src/theme/Root.tsx) (rendered once in this application), to load the components asynchronously. This way, components can be used on all pages:
 
 ```typescript
 import { useEffect} from "react";
@@ -440,4 +440,4 @@ Et voilà! Now when the website is accessed, users will be logged automatically 
 
 {{< image src="/images/post/integrate-components-with-docusaurus/homepage.png" caption="" alt="alter-text" position="center" class="img-fluid" title="wwwroot" webp="false" >}}
 
-You can see the full working example here: [https://github.com/microsoft-search/pnp-modern-search-core-components/tree/release/1.1.0/samples/docusaurus](https://github.com/microsoft-search/pnp-modern-search-core-components/tree/release/1.1.0/samples/docusaurus)
+You can see the full working example here: [https://github.com/microsoft-search/pnp-modern-search-core-components/tree/main/samples/docusaurus](https://github.com/microsoft-search/pnp-modern-search-core-components/tree/main/samples/docusaurus)
