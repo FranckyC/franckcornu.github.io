@@ -3,7 +3,7 @@ title: "Leverage PnP Modern Search Core components and Microsoft Search in your 
 date: 2025-01-03
 # post thumb
 images:
- - images/post/part-1-integrate-components-with-docusaurus/docusaurus.png
+ - images/post/integrate-components-with-docusaurus/docusaurus.png
 #author
 author: "Franck Cornu"
 # description
@@ -67,7 +67,7 @@ themeConfig: {
 
 When configured here, meta-tags are available for **all the pages in your site**:
 
-{{< image src="/images/post/part-1-integrate-components-with-docusaurus/meta-tags.png" caption="" alt="alter-text" position="center" class="img-fluid" title="image title" webp="false" >}}
+{{< image src="/images/post/integrate-components-with-docusaurus/meta-tags.png" caption="" alt="alter-text" position="center" class="img-fluid" title="image title" webp="false" >}}
 
 This configuration is required to make sure all the content is tagged correctly. If needed, you can also set meta-tags at [page level](https://docusaurus.io/docs/seo#single-page-metadata).
 
@@ -113,7 +113,7 @@ Also, for convenience, and to avoid uploading the whole `node_modules`, I'm usin
 
 In the end, once deployed to the App Service, my application looks like this:
 
-{{< image src="/images/post/part-1-integrate-components-with-docusaurus/app_service_wwwroot.png" caption="" alt="alter-text" position="center" class="img-fluid" title="wwwroot" webp="false" >}}
+{{< image src="/images/post/integrate-components-with-docusaurus/app_service_wwwroot.png" caption="" alt="alter-text" position="center" class="img-fluid" title="wwwroot" webp="false" >}}
 
 ### Configure authentication
 
@@ -123,7 +123,7 @@ The next step is to configure autentication for your deployed web application. I
 
 - Use the _"[EasyAuth](https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization)"_ feature of App Service. With this type of authentication, your content will remain accessible to the crawler, as the authentication will be performed before accessing to your site. More importantly, the Microsoft Search Graph connector **[Enterprise Websites ](https://learn.microsoft.com/en-us/microsoftsearch/enterprise-web-connector)** connectors (Cloud or On-Premises) support this scenario and will be able to connect to your site this way.
 
-{{< image src="/images/post/part-1-integrate-components-with-docusaurus/easyauth.png" caption="" alt="alter-text" position="center" class="img-fluid" title="wwwroot" webp="false" >}}
+{{< image src="/images/post/integrate-components-with-docusaurus/easyauth.png" caption="" alt="alter-text" position="center" class="img-fluid" title="wwwroot" webp="false" >}}
 
 ### Create connector in Microsoft Search
 
@@ -133,13 +133,13 @@ In this case, you need first to setup and register a machine with the [Graph Con
 
 In the Microsoft Search admin center, create a new connector, setting the information for your website. For the authentication part, use the application ID for both resource and clients ID fields and use a generated client secret from the Entra ID application used by EasyAuth:
 
-{{< image src="/images/post/part-1-integrate-components-with-docusaurus/enterprise_connector.png" caption="" alt="alter-text" position="center" class="img-fluid" title="wwwroot" webp="false" >}}
+{{< image src="/images/post/integrate-components-with-docusaurus/enterprise_connector.png" caption="" alt="alter-text" position="center" class="img-fluid" title="wwwroot" webp="false" >}}
 
 > The website needs to be hosted in the same tenant as the Microsoft 365 one. **You can't index an internal website protected by Entra ID hosted in a different tenant**
 
 Once the connection is authorized, on the _"Content"_ tab, setup your search schema mapping the meta-tags you defined earlier:
 
-{{< image src="/images/post/part-1-integrate-components-with-docusaurus/add-meta-tags.png" caption="" alt="alter-text" position="center" class="img-fluid" title="wwwroot" webp="false" >}}
+{{< image src="/images/post/integrate-components-with-docusaurus/add-meta-tags.png" caption="" alt="alter-text" position="center" class="img-fluid" title="wwwroot" webp="false" >}}
 
 ### Integrate components into your site
 
@@ -438,6 +438,6 @@ The rest of the configuration is done according components [documentation and pr
 
 Et voilà! Now when the website is accessed, users will be logged automatically via EasyAuth and will be able to search for website content site using components and Microsoft Search:
 
-{{< image src="/images/post/part-1-integrate-components-with-docusaurus/homepage.png" caption="" alt="alter-text" position="center" class="img-fluid" title="wwwroot" webp="false" >}}
+{{< image src="/images/post/integrate-components-with-docusaurus/homepage.png" caption="" alt="alter-text" position="center" class="img-fluid" title="wwwroot" webp="false" >}}
 
 You can see the full working example here: [https://github.com/microsoft-search/pnp-modern-search-core-components/tree/release/1.1.0/samples/docusaurus](https://github.com/microsoft-search/pnp-modern-search-core-components/tree/release/1.1.0/samples/docusaurus)
