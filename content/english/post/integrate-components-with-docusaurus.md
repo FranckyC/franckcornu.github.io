@@ -151,7 +151,7 @@ In the package.json, first add the  `@pnp/modern-search-core` [dependency](https
 ...
 "dependencies": {
 	..
-    "@pnp/modern-search-core": "1.1.0-beta.1-21"
+    "@pnp/modern-search-core": "1.1.1"
 	...
 }
 ```
