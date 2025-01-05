@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://www.franckcornu.com/"
+baseURL = "https://blog.franckcornu.com/"
 title = "Franck Cornu"
 theme = "logbook"
 # post pagination
