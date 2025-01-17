@@ -115,7 +115,7 @@ securitySchemes:
 
 Because the authentication to the API is performed through OAuth2, you need to first create a dedicated Entra ID application in your tenant and then register an OAuth connection in the Teams developer portal: 
 
-1. Register an Entra ID application in Azure and add the API permissions `QnA.Read.All` (delegated)
+1. Register an Entra ID application in Azure and add the API permissions `QnA.Read.All` (delegated). Add the `https://teams.microsoft.com/api/platform/v1.0/oAuthRedirect` as a redirect URL for web platform in the **Authentication** settings.
 
 {{< image src="/images/post/copilot-graph-api-qna-plugin/entra_id_permissions.png" caption="" alt="Entra ID" position="center" class="img-fluid" title="image title" webp="false" >}}
 
