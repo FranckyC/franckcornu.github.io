@@ -14,10 +14,10 @@ tags: [post]
 type: "featured" # available type (regular or featured)
 draft: false
 sidebar: right
-index: false
+index: true
 showimage: false
 _build:
-  list: false
+  list: true
 ---
 
 Recently, I came across an interesting use case building an HR agent allowing employees to ask common questions about company internal policies. These policies were made available to Copilot through a custom Graph Connector. However, during our tests, we realized for some questions, Copilot was struggling answering correctly even though answers were present in FAQ documents alongside the policy itself. To improve answers accuracy, we had the idea to extract the content from these FAQs and leverage the [QnA feature of Microsoft Search](https://learn.microsoft.com/en-us/graph/search-concept-qna). This way, we've added them as an additional source for our agent through an API pluigin (by default QnAs aren't crawl into the semantic index and can't be used in answers).
@@ -25,6 +25,9 @@ Recently, I came across an interesting use case building an HR agent allowing em
 This blog post describes how to use the Microsoft Graph API as a Copilot plugin in a declarative agent. We take a generic example of a agent only retrieving data from QnAs content defined in Microsoft Search using the `/search/query` endpoint of the Microsoft Graph API.
 
 This technique works for any entity types in Microsoft Search (ex: `listItem`, `bookmark`, etc.). However I don't recommend to use it to pull items information from SharePoint or OneDrive as it duplicates what copilot already does behind the scenes with the semantic index.
+
+
+> The complete example is available on GitHub: [https://github.com/FranckyC/copilot-pro-dev-samples/tree/main/samples/da-qna-graphapi-plugin](https://github.com/FranckyC/copilot-pro-dev-samples/tree/main/samples/da-qna-graphapi-plugin) 
 
 ## 1. Get Microsoft Graph Open API spec file
 
