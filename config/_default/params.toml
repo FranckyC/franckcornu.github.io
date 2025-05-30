@@ -54,6 +54,13 @@ image = "images/promotion.jpg"
 button_label = "See the offer"
 button_link = "https://franckcornu.thinkific.com/courses/pnp-modern-search"
 
+[promotion2]
+title = "Practical SharePoint Framework (SPFx) Development"
+content = "Build modern, scalable, and efficient business solutions for SharePoint and Microsoft 365"
+image = "images/book.jpg"
+button_label = "Buy the book on Amazon"
+button_link = "https://www.amazon.com/Practical-SharePoint-Framework-SPFx-Development/dp/1835466788?link_from_packtlink=yes"
+
 # seo meta data for OpenGraph / Twitter Card
 [metadata]
 keywords = ["Franck Cornu", "PnP", "Modern Search"]
