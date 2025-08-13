@@ -21,7 +21,7 @@ _build:
 
 # Monitor your Copilot declarative agents using TypeSpec and Application Insights
 
-> The complete example is available on GitHub: [https://github.com/FranckyC/copilot-pro-dev-samples/tree/main/samples/da-appinsights-plugin-typespec](https://github.com/FranckyC/copilot-pro-dev-samples/tree/main/samples/da-appinsights-plugin-typespec) 
+> The complete example is available on GitHub: [https://github.com/FranckyC/copilot-pro-dev-samples/tree/main/samples/da-typespec-appinsights](https://github.com/FranckyC/copilot-pro-dev-samples/tree/main/samples/da-typespec-appinsights) 
 
 ## Why monitoring?
 
