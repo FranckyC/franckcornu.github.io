@@ -90,30 +90,11 @@ To be short: for those used to configure the SSO mechanism with bot dialogs (ex 
  - `Sites.Read.All`: read SharePoint/OneDrive content
  - `openid` `profile`: user sign in permissions.
 
-3. In "_Expose an API_", create application ID URI. This has to follow the format `api://botid-<client-id>`:
-
-{{< image src="/images/post/copilot-retrieval-api-ai-foundry/expose_api.png" caption="" alt="Expose API" position="center" class="img-fluid" title="image title" webp="false" >}}
-
-4. Add a new scope for user impersonation (`access_as_user`):
-
-{{< image src="/images/post/copilot-retrieval-api-ai-foundry/app_scope.png" caption="" alt="App scopes" position="center" class="img-fluid" title="image title" webp="false" >}}
-
-5. For the SSO process and to avoid user content, pre-authorize the following Microsoft applications:
-
-| Microsoft App | ID |
-|---------------|----|
-| **Teams mobile or desktop client**         | `1fec8e78-bce4-4aaf-ab1b-5451cc387264` |
-| **Teams web client** | `5e3ce6c0-2b1f-4285-8d4b-75ee78787346` |
-
-{{< image src="/images/post/copilot-retrieval-api-ai-foundry/preauthorized_applications.png" caption="" alt="Preauthorized applications" position="center" class="img-fluid" title="image title" webp="false" >}}
-
-> Copilot application (i.e https://m365.cloud.microsoft/copilot) is considered as the Teams web application
-
-6. In the app manifest, make sure the `requestedAccessTokenVersion` property is set to **2**:
+3. In the app manifest, make sure the `requestedAccessTokenVersion` property is set to **2**:
 
 {{< image src="/images/post/copilot-retrieval-api-ai-foundry/app_manifest.png" caption="" alt="App Manifest" position="center" class="img-fluid" title="image title" webp="false" >}}
 
-7. In "_Authentication_" add a new web platform and the redirect URL `https://token.botframework.com/.auth/web/redirect`. Make sure the "ID tokens" option is checked.
+4. In "_Authentication_" add a new web platform and the redirect URL `https://token.botframework.com/.auth/web/redirect`. Make sure the "ID tokens" option is checked.
 
 {{< image src="/images/post/copilot-retrieval-api-ai-foundry/app_web_auth.png" caption="" alt="App Web Auth" position="center" class="img-fluid" title="image title" webp="false" >}}
 
